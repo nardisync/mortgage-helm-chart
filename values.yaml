@@ -6,10 +6,10 @@ replicaCount:
 
 image:
   tokenHandler:
-    repository: nardisync/mortgage-microservice
+    repository: nardisync/token-handler-microservice
     tag: latest
   mortgage:
-    repository: nardisync/token-handler-microservice
+    repository: nardisync/mortgage-microservice
     tag: latest
 
 
