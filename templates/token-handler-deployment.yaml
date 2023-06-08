@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: token-handler-deployment
+spec:
+  replicas: {{ .Values.replicaCount.tokenHandler }}
+  selector:
+    matchLabels:
+      app: token-handler
+  template:
+    metadata:
+      labels:
+        app: token-handler
+    spec:
+      containers:
+        - name: token-handler
+          image: {{ .Values.image.tokenHandler.repository }}:{{ .Values.image.tokenHandler.tag }}
+          ports:
+            - containerPort: 9000

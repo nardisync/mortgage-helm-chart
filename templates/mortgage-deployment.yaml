@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-microservice-deployment
+spec:
+  replicas: {{ .Values.replicaCount.mortgage }}
+  selector:
+    matchLabels:
+      app: mortgage-microservice
+  template:
+    metadata:
+      labels:
+        app: mortgage-microservice
+    spec:
+      containers:
+        - name: mortgage-microservice
+          image: {{ .Values.image.mortgage.repository }}:{{ .Values.image.mortgage.tag }}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TOKEN_HANDLER_URL
+              value: http://token-handler:9000/
