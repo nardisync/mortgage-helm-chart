@@ -11,3 +11,13 @@ image:
   mortgage:
     repository: nardisync/token-handler-microservice
     tag: latest
+
+
+service:
+  enabled: true
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080

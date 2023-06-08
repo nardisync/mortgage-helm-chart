@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "mortgage-helm-chart.fullname" . }}:{{ (include "mortgage-helm-chart.service" .).spec.ports.[0].port }}']
+      args: ['{{ include "mortgage-helm-chart.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
