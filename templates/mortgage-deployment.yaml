@@ -17,6 +17,3 @@ spec:
           image: {{ .Values.image.mortgage.repository }}:{{ .Values.image.mortgage.tag }}
           ports:
             - containerPort: 8080
-          env:
-            - name: TOKEN_HANDLER_URL
-              value: http://token-handler:9000/

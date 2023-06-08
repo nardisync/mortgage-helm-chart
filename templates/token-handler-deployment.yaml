@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: token-handler-deployment
+  name: token-handler
 spec:
   replicas: {{ .Values.replicaCount.tokenHandler }}
   selector:
