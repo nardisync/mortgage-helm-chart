@@ -1,8 +1,8 @@
 # values.yaml
 
 replicaCount: 
-  tokenHandler: 2
-  mortgage: 1
+  tokenHandler: 1
+  mortgage: 2
 
 image:
   tokenHandler:
